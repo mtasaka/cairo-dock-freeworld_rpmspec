@@ -1,11 +1,11 @@
 %global	urlver	3.6
-%global	mainver	3.6.1
+%global	mainver	3.6.91
 
 %global	plugin_least_ver	3.6.0
 
-%dnl %global	use_git	1
-%global	gitdate	20250922
-%global	githash	bbdf30b67241dbf61dea651b636a07da5cc39049
+%global	use_git	1
+%global	gitdate	20251205
+%global	githash	d472886dbb5f3bba049a13c9735462e84c6d5b58
 %global	shorthash	%(c=%{githash} ; echo ${c:0:7})
 
 %global	tarballver	%{mainver}%{?use_git:-%{gitdate}git%{shorthash}}
@@ -18,7 +18,7 @@
 
 ##########################################
 %global		flagrel	%{nil}
-%global		use_gcc_strict_sanitize	0
+%global		use_gcc_strict_sanitize	1
 
 %if	0%{?use_gcc_strict_sanitize} >= 1
 %global		flagrel	%{flagrel}.san
