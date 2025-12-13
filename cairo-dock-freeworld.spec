@@ -1,11 +1,11 @@
 %global	urlver	3.6
-%global	mainver	3.6.91
+%global	mainver	3.6.92
 
 %global	plugin_least_ver	3.6.0
 
 %global	use_git	1
-%global	gitdate	20251205
-%global	githash	d472886dbb5f3bba049a13c9735462e84c6d5b58
+%global	gitdate	20251213
+%global	githash	8910ce062c6673e675db4775a63b14bb1d080bb5
 %global	shorthash	%(c=%{githash} ; echo ${c:0:7})
 
 %global	tarballver	%{mainver}%{?use_git:-%{gitdate}git%{shorthash}}
@@ -38,6 +38,8 @@ Source0:		https://github.com/Cairo-Dock/cairo-dock-core/archive/%{githash}/cairo
 Source0:		https://github.com/Cairo-Dock/cairo-dock-core/archive/%{version}/cairo-dock-%{mainver}.tar.gz
 %endif
 Source1:		cairo-dock-freeworld-oldchangelog
+# https://github.com/Cairo-Dock/cairo-dock-core/pull/205
+Patch0:		cairo-dock-pr205-fix-use-after-free.patch
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
