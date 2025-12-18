@@ -1,11 +1,11 @@
 %global	urlver	3.6
-%global	mainver	3.6.92
+%global	mainver	3.6.93
 
 %global	plugin_least_ver	3.6.0
 
 %global	use_git	1
-%global	gitdate	20251214
-%global	githash	ca1ff8a43c3f390726ac29d0902ce3281c220602
+%global	gitdate	20251217
+%global	githash	99e1b5522066923194da612d52ef5ca87f5627ac
 %global	shorthash	%(c=%{githash} ; echo ${c:0:7})
 
 %global	tarballver	%{mainver}%{?use_git:-%{gitdate}git%{shorthash}}
@@ -65,6 +65,7 @@ BuildRequires:	pkgconfig(gtk-layer-shell-0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(json-c)
 BuildRequires:	pkgconfig(libcurl)
+BuildRequires:	pkgconfig(libevdev)
 BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(systemd)
