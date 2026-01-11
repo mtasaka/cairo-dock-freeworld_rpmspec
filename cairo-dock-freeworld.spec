@@ -200,6 +200,9 @@ install -cpm 644 \
 %{_libdir}/%{name}/libgldi.so.3*
 
 %changelog
+* Tue Dec 23 2025 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.6.2-1
+- 3.6.2
+
 * Tue Nov 04 2025 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.6.1-1
 - 3.6.1
 
