@@ -4,8 +4,8 @@
 %global	plugin_least_ver	3.6.0
 
 %global	use_git	1
-%global	gitdate	20260211
-%global	githash	54820748c23b3af0c26d329e92bd815fceda5931
+%global	gitdate	20260228
+%global	githash	b5c10aee428de208a9eb1c5f0f5ab64cdf300059
 %global	shorthash	%(c=%{githash} ; echo ${c:0:7})
 
 %global	tarballver	%{mainver}%{?use_git:-%{gitdate}git%{shorthash}}
@@ -146,16 +146,25 @@ rm -f CMakeCache.txt
 	-Denable-egl-support:BOOL=ON \
 	%{nil}
 
+%if 0%{?fedora} >= 44
+ninja-build -v -j %_smp_build_ncpus -C redhat-linux-build/ src/gldit/all -k 0
+%else
 %global __cmake_builddir %{_vpath_builddir}/src/gldit
 %cmake_build
+%endif
 
 %install
 rm -rf TMPINSTDIR
 
-%global __cmake_builddir %{_vpath_builddir}/src/gldit
 %global buildroot_orig %buildroot
 %global buildroot $(pwd)/TMPINSTDIR
+%if 0%{?fedora} >= 44
+env DESTDIR=%buildroot \
+	ninja -v -C redhat-linux-build/ src/gldit/install
+%else
+%global __cmake_builddir %{_vpath_builddir}/src/gldit
 %cmake_install
+%endif
 
 %global buildroot %buildroot_orig
 
