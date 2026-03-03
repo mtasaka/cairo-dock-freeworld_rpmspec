@@ -4,13 +4,13 @@
 %global	plugin_least_ver	3.6.0
 
 %global	use_git	1
-%global	gitdate	20260126
-%global	githash	659bc298a5f2145df5ccceb93e11cf57921a392e
+%global	gitdate	20260211
+%global	githash	54820748c23b3af0c26d329e92bd815fceda5931
 %global	shorthash	%(c=%{githash} ; echo ${c:0:7})
 
 %global	tarballver	%{mainver}%{?use_git:-%{gitdate}git%{shorthash}}
 
-%global	baserelease	2
+%global	baserelease	1
 %dnl %global	alphatag		.rcb
 
 %undefine _ld_strict_symbol_defs
