@@ -4,13 +4,13 @@
 %global	plugin_least_ver	3.6.0
 
 %global	use_git	1
-%global	gitdate	20260322
-%global	githash	a55d901dadc39e1e4855652b36235bf9e8ae0dda
+%global	gitdate	20260417
+%global	githash	253e907470c52ffc76767447d1531da6ba3f4f5c
 %global	shorthash	%(c=%{githash} ; echo ${c:0:7})
 
 %global	tarballver	%{mainver}%{?use_git:-%{gitdate}git%{shorthash}}
 
-%global	baserelease	2
+%global	baserelease	1
 %dnl %global	alphatag		.rcb
 
 %undefine _ld_strict_symbol_defs
@@ -38,8 +38,6 @@ Source0:		https://github.com/Cairo-Dock/cairo-dock-core/archive/%{githash}/cairo
 Source0:		https://github.com/Cairo-Dock/cairo-dock-core/archive/%{version}/cairo-dock-%{mainver}.tar.gz
 %endif
 Source1:		cairo-dock-freeworld-oldchangelog
-# https://github.com/Cairo-Dock/cairo-dock-core/pull/259
-Patch0:		cairo-dock-pr259-suppress-gfileinfo-warnings.patch
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
