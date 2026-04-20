@@ -1,11 +1,11 @@
 %global	urlver	3.6
-%global	mainver	3.6.98
+%global	mainver	3.6.99
 
 %global	plugin_least_ver	3.6.0
 
 %global	use_git	1
-%global	gitdate	20260417
-%global	githash	253e907470c52ffc76767447d1531da6ba3f4f5c
+%global	gitdate	20260419
+%global	githash	d71fa59ce36314b0f87c4856929834a73509b551
 %global	shorthash	%(c=%{githash} ; echo ${c:0:7})
 
 %global	tarballver	%{mainver}%{?use_git:-%{gitdate}git%{shorthash}}
