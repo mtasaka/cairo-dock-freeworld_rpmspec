@@ -4,8 +4,8 @@
 %global	plugin_least_ver	3.6.0
 
 %global	use_git	1
-%global	gitdate	20260702
-%global	githash	57b7e9de339daf6379fb27074d5b660c32e8ddfa
+%global	gitdate	20260707
+%global	githash	089b504cb6c23764e686659ab41da9437f6e3ee5
 %global	shorthash	%(c=%{githash} ; echo ${c:0:7})
 
 %global	tarballver	%{mainver}%{?use_git:-%{gitdate}git%{shorthash}}
