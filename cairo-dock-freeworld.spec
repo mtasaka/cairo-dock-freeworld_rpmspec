@@ -1,11 +1,11 @@
 %global	urlver	3.6
-%global	mainver	3.6.99
+%global	mainver	3.6.100
 
 %global	plugin_least_ver	3.6.0
 
 %global	use_git	1
-%global	gitdate	20260707
-%global	githash	089b504cb6c23764e686659ab41da9437f6e3ee5
+%global	gitdate	20260712
+%global	githash	32bdab5b2076ce0cec1d26cb38ea2878cd9e0281
 %global	shorthash	%(c=%{githash} ; echo ${c:0:7})
 
 %global	tarballver	%{mainver}%{?use_git:-%{gitdate}git%{shorthash}}
@@ -53,6 +53,7 @@ BuildRequires:  libubsan
 BuildRequires:	gettext
 BuildRequires:	intltool
 
+BuildRequires:	pkgconfig(libarchive)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(dbus-glib-1)
