@@ -1,4 +1,6 @@
 %undefine       _changelog_trimtime
+%undefine		clamp_mtime_to_source_date_epoch
+%undefine		build_mtime_policy
 
 %global	urlver	3.6
 %global	mainver	3.6.101
@@ -6,8 +8,8 @@
 %global	plugin_least_ver	3.6.0
 
 %global	use_git	1
-%global	gitdate	20260719
-%global	githash	7a509ef205303215a33d9685a59a45edc20a1ef2
+%global	gitdate	20260724
+%global	githash	671a7c1cb9dbfc690b167b1ac247eda0f9a9058f
 %global	shorthash	%(c=%{githash} ; echo ${c:0:7})
 
 %global	tarballver	%{mainver}%{?use_git:-%{gitdate}git%{shorthash}}
