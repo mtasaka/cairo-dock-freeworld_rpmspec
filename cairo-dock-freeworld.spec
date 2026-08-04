@@ -1,21 +1,24 @@
-%undefine       _changelog_trimtime
-%undefine		clamp_mtime_to_source_date_epoch
-%undefine		build_mtime_policy
-
 %global	urlver	3.6
 %global	mainver	3.6.101
 
 %global	plugin_least_ver	3.6.0
 
 %global	use_git	1
-%global	gitdate	20260724
-%global	githash	671a7c1cb9dbfc690b167b1ac247eda0f9a9058f
+%global	gitdate	20260801
+%global	githash	a85dfa2a4a12ca6abe8532530142975107a7c5a1
 %global	shorthash	%(c=%{githash} ; echo ${c:0:7})
 
 %global	tarballver	%{mainver}%{?use_git:-%{gitdate}git%{shorthash}}
 
 %global	baserelease	1
 %dnl %global	alphatag		.rcb
+
+%if	0%{?use_git} >= 1
+%undefine       _changelog_trimtime
+%undefine		clamp_mtime_to_source_date_epoch
+%undefine		source_date_epoch_from_changelog
+%undefine		build_mtime_policy
+%endif
 
 %undefine _ld_strict_symbol_defs
 %undefine __brp_mangle_shebangs
